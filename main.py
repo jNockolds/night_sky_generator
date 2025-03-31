@@ -84,15 +84,15 @@ def adjust_apparent_brightness(colour, brightness):
     return (int(r), int(g), int(b))
 
 def get_saturation(colour):
-    colour = tuple(x/255 for x in colour) # normalising
+    colour = tuple(x/255 for x in colour) # normalising (i.e. converting to range [0,1])
     colour = colorsys.rgb_to_hsv(colour[0], colour[1], colour[2])
     return colour[1]
 
 def adjust_saturation(colour, saturation):
-    colour = tuple(x/255 for x in colour) # normalising
+    colour = tuple(x/255 for x in colour) # normalising (i.e. converting to range [0,1])
     colour = colorsys.rgb_to_hsv(colour[0], colour[1], colour[2])
-    colour = colorsys.hsv_to_rgb(colour[0], saturation, colour[2])
-    colour = tuple(x*255 for x in colour) # converting back to [0,255]
+    colour = colorsys.hsv_to_rgb(colour[0], saturation, colour[2]) # adjusting saturation
+    colour = tuple(x*255 for x in colour) # converting back to range [0,255]
     return (int(colour[0]), int(colour[1]), int(colour[2]))
 
 def random_sky_colour(print_colour=True):
