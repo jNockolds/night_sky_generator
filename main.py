@@ -104,7 +104,7 @@ def random_sky_colour(print_colour=True):
     g = int(round(8 * random.random()))
     b = int(round(20 * random.random()))
     
-    while b < r or b < g: # keeps it primarily grey, blue, and red
+    while b < r or b < g: # keep it primarily grey/blue
         r = int(round(8 * random.random()))
         g = int(round(8 * random.random()))
         b = int(round(20 * random.random()))
