@@ -2,7 +2,7 @@ import turtle
 import random
 import colorsys
 
-screen_width, screen_height = 200, 200
+screen_width, screen_height = 1280, 720
 
 screen = turtle.Screen()
 screen.title("Starry Sky")
@@ -165,7 +165,7 @@ def draw_stars(star_density=0.001, radius_min=0.5, radius_max=3):
 
 screen.bgcolor(random_sky_colour())
 
-draw_stars(star_density=0.1)
+draw_stars()
 
 turtle.update() # renders the drawings
 turtle.done() # keeps screen open after drawing is complete
