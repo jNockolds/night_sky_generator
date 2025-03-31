@@ -2,6 +2,8 @@ import turtle
 import random
 import colorsys
 
+# defining variables:
+
 screen_width, screen_height = 1280, 720
 
 screen = turtle.Screen()
@@ -14,6 +16,8 @@ pen = turtle.Turtle()
 pen.hideturtle()
 pen.pencolor("White")
 pen.fillcolor("White")
+
+# defining functions:
 
 def draw_circle(radius, fill=False):
     """Centred on turtle's position."""
@@ -162,6 +166,9 @@ def draw_stars(star_density=0.001, radius_min=0.5, radius_max=3):
 
         pen.teleport(star[0], star[1])
         draw_circle(radius, True)
+
+
+# drawing:
 
 screen.bgcolor(random_sky_colour())
 
